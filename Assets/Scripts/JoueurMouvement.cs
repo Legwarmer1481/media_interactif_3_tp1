@@ -7,10 +7,10 @@ public class JoueurMouvement : MonoBehaviour
 {
 
     [Header("Valeurs de mouvement")]
-    [SerializeField] Vector2 deplacements;
-    [SerializeField] Vector2 regarder;
-    [SerializeField] bool sauter;
-    [SerializeField] bool courir;
+    public Vector2 deplacements;
+    public Vector2 regarder;
+    public bool sauter;
+    public bool courir;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +43,7 @@ public class JoueurMouvement : MonoBehaviour
 
     public void OnSprint(InputValue value){
         Courir(value.isPressed);
+        Debug.Log(value);
     }
 
     /* ================================================

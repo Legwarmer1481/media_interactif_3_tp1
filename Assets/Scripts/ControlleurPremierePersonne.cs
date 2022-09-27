@@ -29,6 +29,7 @@ public class ControlleurPremierePersonne : MonoBehaviour
     private PlayerInput joueur_input;
     private CharacterController joueur_CharacCont;
     private GameObject cameraPrincipal;
+    private JoueurMouvement joueur_mouvement;
     
     void Awake(){
         if(cameraPrincipal == null){
@@ -41,6 +42,7 @@ public class ControlleurPremierePersonne : MonoBehaviour
 
         joueur_CharacCont = GetComponent<CharacterController>();
         joueur_input = GetComponent<PlayerInput>();
+        joueur_mouvement = GetComponent<JoueurMouvement>();
         
     }
 
@@ -56,7 +58,26 @@ public class ControlleurPremierePersonne : MonoBehaviour
 
     // Gerer mouvement
 
-    
+    void Bouge(){
+        
+        float vitesse;
+        float vitesseHorizontal = new Vector3(joueur_CharacCont.velocity.x, 0.0f, joueur_CharacCont.velocity.z).magnitude;
+        float vitesseOffset = 0.1f;
+
+
+        if(joueur_mouvement.courir == true){
+            vitesse = vitesseCourse;
+        }else{
+            vitesse = vitesseMarche;
+        }
+        if(joueur_mouvement == Vector2.zero){
+            vitesse = 0.0f;
+        }
+
+        if(vitesseHorizontal < vitesse - vitesseOffset || vitesseHorizontal > vitesse + vitesseOffset){
+            
+        }
+    }
 
 
 }
