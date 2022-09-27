@@ -20,6 +20,12 @@ public class ControlleurPremierePersonne : MonoBehaviour
     [SerializeField] float sautTimeOut = 0.1f;
     [SerializeField] float chuteTimeOut = 0.1f;
 
+    [Header("Joueur au sol")]
+    [SerializeField] bool auSol = true;
+    [SerializeField] float solOffset = -0.88f;
+    [SerializeField] float solCirconference = 0.5f;
+    [SerializeField] LayerMask solLayers;
+
     [Header("Cinemachine")]
     [SerializeField] GameObject cinemachineCameraCible;
     [SerializeField] float topClamp = 90.0f;
@@ -55,17 +61,27 @@ public class ControlleurPremierePersonne : MonoBehaviour
     void Update()
     {
 
+        VerificationSol();
         Bouge();
-        /* 4 fonctions:
+        /*
             1. Saut et Gravite
             2. Verifier si le personnage touche le sol
-            3. Se deplace
-            4. Rotation de caméra
         */  
     }
 
-    // Gerer mouvement
+    void LateUpdate(){
+        /* 
+            Rotation de caméra
+         */
+    }
 
+    // Verifier si le personnage touche le sol
+    void VerificationSol(){
+        Vector3 position = new Vector3(transform.position.x, transform.position.y - solOffset, transform.position.z);
+        auSol = Physics.CheckSphere(position, solCirconference, solLayers, QueryTriggerInteraction.Ignore);
+    }
+
+    // Gerer mouvement
     void Bouge(){
         
         float vitesseCible;
