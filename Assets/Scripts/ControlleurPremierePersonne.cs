@@ -10,6 +10,7 @@ public class ControlleurPremierePersonne : MonoBehaviour
     [SerializeField] float vitesseMarche = 1.0f;
     [SerializeField] float vitesseCourse = 3.0f;
     [SerializeField] float vitesseRotation = 1.0f;
+    [SerializeField] float vitesseChangement = 10.0f;
 
     [Space(10)]
     [SerializeField] float hauteurSaut = 1.2f;
@@ -24,6 +25,11 @@ public class ControlleurPremierePersonne : MonoBehaviour
     [SerializeField] float topClamp = 90.0f;
     [SerializeField] float bottomClamp = -90.0f;
 
+    // Joueur
+    private float vitesse;
+    private float velociteRotation;
+    private float velociteVerticale;
+    private float velociteTerminale = 53.0f;
 
     // Composants
     private PlayerInput joueur_input;
@@ -48,6 +54,8 @@ public class ControlleurPremierePersonne : MonoBehaviour
 
     void Update()
     {
+
+        Bouge();
         /* 4 fonctions:
             1. Saut et Gravite
             2. Verifier si le personnage touche le sol
@@ -60,23 +68,34 @@ public class ControlleurPremierePersonne : MonoBehaviour
 
     void Bouge(){
         
-        float vitesse;
+        float vitesseCible;
         float vitesseHorizontal = new Vector3(joueur_CharacCont.velocity.x, 0.0f, joueur_CharacCont.velocity.z).magnitude;
         float vitesseOffset = 0.1f;
-
+        Vector3 directionTouche = new Vector3(joueur_mouvement.deplacements.x, 0.0f, joueur_mouvement.deplacements.y);
 
         if(joueur_mouvement.courir == true){
-            vitesse = vitesseCourse;
+            vitesseCible = vitesseCourse;
         }else{
-            vitesse = vitesseMarche;
+            vitesseCible = vitesseMarche;
         }
-        if(joueur_mouvement == Vector2.zero){
-            vitesse = 0.0f;
+        if(joueur_mouvement.deplacements == Vector2.zero){
+            vitesseCible = 0.0f;
         }
 
         if(vitesseHorizontal < vitesse - vitesseOffset || vitesseHorizontal > vitesse + vitesseOffset){
             
+            vitesse = Mathf.Lerp(vitesseHorizontal, vitesseCible, Time.deltaTime * vitesseChangement);
+        
+            vitesse = Mathf.Round(vitesse * 1000f) / 1000f;
+        }else{
+            vitesse = vitesseCible;
         }
+
+        if(joueur_mouvement.deplacements != Vector2.zero){
+            directionTouche = transform.right * joueur_mouvement.deplacements.x + transform.forward * joueur_mouvement.deplacements.y;
+        }
+
+        joueur_CharacCont.Move(directionTouche.normalized * (vitesse * Time.deltaTime) + new Vector3(0.0f, 0.0f, 0.0f) * Time.deltaTime);
     }
 
 
