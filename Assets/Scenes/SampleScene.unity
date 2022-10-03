@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 366299378}
   - component: {fileID: 366299377}
   - component: {fileID: 366299376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 1141878416}
   m_Layer: 0
   m_Name: CameraRacine
-  m_TagString: Untagged
+  m_TagString: CinemachineTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 1797173892}
   - component: {fileID: 1797173891}
   - component: {fileID: 1797173890}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 1877279075}
   - component: {fileID: 1877279079}
   - component: {fileID: 1877279078}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1109,11 +1109,11 @@ MonoBehaviour:
   sautTimeOut: 0.1
   chuteTimeOut: 0.1
   auSol: 0
-  solOffset: -0.88
+  solOffset: -2
   solCirconference: 0.5
   solLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65
   cinemachineCameraCible: {fileID: 1612488281}
   topClamp: 90
   bottomClamp: -90

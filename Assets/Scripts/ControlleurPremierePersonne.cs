@@ -22,7 +22,7 @@ public class ControlleurPremierePersonne : MonoBehaviour
 
     [Header("Joueur au sol")]
     [SerializeField] bool auSol = true;
-    [SerializeField] float solOffset = -0.88f;
+    [SerializeField] float solOffset = 0.42f;
     [SerializeField] float solCirconference = 0.5f;
     [SerializeField] LayerMask solLayers;
 
@@ -77,8 +77,8 @@ public class ControlleurPremierePersonne : MonoBehaviour
 
     // Verifier si le personnage touche le sol
     void VerificationSol(){
-        Vector3 position = new Vector3(transform.position.x, transform.position.y - solOffset, transform.position.z);
-        auSol = Physics.CheckSphere(position, solCirconference, solLayers, QueryTriggerInteraction.Ignore);
+        Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - solOffset, transform.position.z);
+		auSol = Physics.CheckSphere(spherePosition, solCirconference, solLayers, QueryTriggerInteraction.Ignore);
     }
 
     // Gerer mouvement
