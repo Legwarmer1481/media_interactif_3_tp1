@@ -1088,6 +1088,8 @@ MonoBehaviour:
   regarder: {x: 0, y: 0}
   sauter: 0
   courir: 0
+  cursorLocked: 1
+  cursorInputForLook: 1
 --- !u!114 &1877279079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,5 +1117,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65
   cinemachineCameraCible: {fileID: 1141878415}
-  topClamp: 90
-  bottomClamp: -90
+  topClamp: 45
+  bottomClamp: -45
