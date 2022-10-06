@@ -12,6 +12,10 @@ public class JoueurMouvement : MonoBehaviour
     public bool sauter;
     public bool courir;
 
+    [Header("Mouse Cursor Settings")]
+	public bool cursorLocked = true;
+	public bool cursorInputForLook = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,4 +70,18 @@ public class JoueurMouvement : MonoBehaviour
     public void Courir(bool etat){
         courir = etat;
     }
+
+    /* ================================================
+        Le focus de la souris à l'appli
+    ================================================ */
+
+    private void OnApplicationFocus(bool hasFocus)
+	{
+		SetCursorState(cursorLocked);
+	}
+
+	private void SetCursorState(bool newState)
+	{
+		Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+	}
 }
