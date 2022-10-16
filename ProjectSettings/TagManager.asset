@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Ennemi
+  - Allie
   layers:
   - Default
   - TransparentFX

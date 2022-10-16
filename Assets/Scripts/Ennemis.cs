@@ -9,9 +9,6 @@ public class Ennemis : MonoBehaviour
     [Header("Cible")]
     [SerializeField] GameObject cible;
 
-    [Header("Caracteristiques")]
-    [SerializeField] float vitesse = 2f;
-
     // Composants
     private UnityEngine.AI.NavMeshAgent agent;
 
@@ -26,7 +23,6 @@ public class Ennemis : MonoBehaviour
         }
 
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = vitesse;
 
         Debug.Log(agent);
     }
