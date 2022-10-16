@@ -2,32 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Ennemis : MonoBehaviour
 {
-    [Header("Cible")]
+    [Header("Cibles")]
     [SerializeField] GameObject cible;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip explosion;
+
     // Composants
-    private UnityEngine.AI.NavMeshAgent agent;
+    private NavMeshAgent agent;
+    private AudioSource audioSource;
 
     // Evenements
-    public UnityEvent Touche;
+    public UnityEvent Toucher;
 
     void Start(){
 
-        if (cible == null)
-        {
-            cible = GameObject.FindGameObjectWithTag("Player");
-        }
-
         agent = GetComponent<NavMeshAgent>();
-
-        Debug.Log(agent);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update(){
         agent.SetDestination(cible.transform.position);
+    }
+
+    void OnCollisionEnter(Collision other){
+
+        if(other.transform.tag == "Player"){
+
+            audioSource.Stop();
+            audioSource.PlayOneShot(explosion, 1.0f);
+
+            Toucher.Invoke();
+
+            Invoke("AutoDetruire", explosion.length);
+        }
+
+    }
+
+    void AutoDetruire(){
+
+            Destroy(gameObject);
     }
 }

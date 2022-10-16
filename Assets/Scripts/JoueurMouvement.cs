@@ -16,18 +16,6 @@ public class JoueurMouvement : MonoBehaviour
 	public bool cursorLocked = true;
 	public bool cursorInputForLook = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /* ================================================
         Recevoir les signaux des touches de claviers
         et de souris appuyées
@@ -80,7 +68,7 @@ public class JoueurMouvement : MonoBehaviour
 		SetCursorState(cursorLocked);
 	}
 
-	private void SetCursorState(bool newState)
+	public void SetCursorState(bool newState)
 	{
 		Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 	}

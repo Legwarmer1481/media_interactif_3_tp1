@@ -89170,7 +89170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cible: {fileID: 0}
-  vitesse: 6
+  explosion: {fileID: 8300000, guid: c393b0a346f347fec89095653fbe2a56, type: 3}
   Touche:
     m_PersistentCalls:
       m_Calls: []
