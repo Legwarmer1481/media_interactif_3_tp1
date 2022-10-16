@@ -89169,6 +89169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cible: {fileID: 0}
+  spawn: {fileID: 0}
+  vitesse: 6
 --- !u!82 &413050977149966430
 AudioSource:
   m_ObjectHideFlags: 0
