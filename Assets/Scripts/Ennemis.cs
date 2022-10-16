@@ -16,7 +16,7 @@ public class Ennemis : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent agent;
 
     // Evenements
-    public UnityEventTouche;
+    public UnityEvent Touche;
 
     void Start(){
 
