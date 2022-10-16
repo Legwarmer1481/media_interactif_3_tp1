@@ -26,9 +26,9 @@ public class Ennemis : MonoBehaviour
         }
 
         agent = GetComponent<NavMeshAgent>();
-        //agent.updateRotation = false;
-        //agent.updateUpAxis = false;
         agent.speed = vitesse;
+
+        Debug.Log(agent);
     }
 
     void Update(){
