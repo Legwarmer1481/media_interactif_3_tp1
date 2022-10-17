@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6323737598695907656}
   - component: {fileID: 4780482192559440182}
+  - component: {fileID: 2268941415123610462}
   m_Layer: 0
   m_Name: DetectionEnnemi
-  m_TagString: Untagged
+  m_TagString: Allie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +46,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4.955472
   m_Center: {x: 0, y: 1.1227674, z: -0.020687103}
+--- !u!114 &2268941415123610462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187526147434552829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a572fc83ae3d756935acb6111bda3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allie: {fileID: 6421158317401333558}
 --- !u!1 &8286522322972960626
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cible: {fileID: 0}
+  distance: 5
+  distanceDefaut: 5
   detecteur: {fileID: 4780482192559440182}
 --- !u!95 &2420489874826700462
 Animator:
@@ -184,7 +200,7 @@ GameObject:
   - component: {fileID: 8286522323548096280}
   m_Layer: 0
   m_Name: Roue
-  m_TagString: Untagged
+  m_TagString: Allie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11858,7 +11874,7 @@ GameObject:
   - component: {fileID: 8286522324050166740}
   m_Layer: 0
   m_Name: Corps
-  m_TagString: Untagged
+  m_TagString: Allie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

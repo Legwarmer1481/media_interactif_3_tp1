@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2223670253587372141}
   m_Layer: 0
   m_Name: BasCorps
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 7152721592554574360}
   m_Layer: 0
   m_Name: Yeux
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1738,7 +1738,7 @@ GameObject:
   - component: {fileID: 7611765523586553585}
   m_Layer: 0
   m_Name: BarArrGauche
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 551093461470079045}
   m_Layer: 0
   m_Name: Tete
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13709,7 +13709,7 @@ GameObject:
   - component: {fileID: 4537138769997537416}
   m_Layer: 0
   m_Name: BarriereGauche
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14024,7 +14024,7 @@ GameObject:
   - component: {fileID: 6878621936494510032}
   m_Layer: 0
   m_Name: BarDevGauche
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14337,7 +14337,7 @@ GameObject:
   - component: {fileID: 2618048898401331723}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14455,7 +14455,7 @@ GameObject:
   - component: {fileID: 6135729768197063712}
   m_Layer: 0
   m_Name: JointCou
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26132,7 +26132,7 @@ GameObject:
   - component: {fileID: 4355262041394045638}
   m_Layer: 0
   m_Name: Cou
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27537,7 +27537,7 @@ GameObject:
   - component: {fileID: 2296062643118822040}
   m_Layer: 0
   m_Name: BarriereArriere
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27852,7 +27852,7 @@ GameObject:
   - component: {fileID: 9009091318335594232}
   m_Layer: 0
   m_Name: OeilGauche
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39507,7 +39507,7 @@ GameObject:
   - component: {fileID: 7642353099163123684}
   m_Layer: 0
   m_Name: AddoucissementBordure
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52109,7 +52109,7 @@ GameObject:
   - component: {fileID: 7726892340557073706}
   m_Layer: 0
   m_Name: BarArrDroite
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52424,7 +52424,7 @@ GameObject:
   - component: {fileID: 1937489293762425456}
   m_Layer: 0
   m_Name: Corps
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65041,7 +65041,7 @@ GameObject:
   - component: {fileID: 7321149109240422525}
   m_Layer: 0
   m_Name: BordureBasse
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76711,7 +76711,7 @@ GameObject:
   - component: {fileID: 182133335040717354}
   m_Layer: 0
   m_Name: BarDevDroite
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77026,7 +77026,7 @@ GameObject:
   - component: {fileID: 712926755593042130}
   m_Layer: 0
   m_Name: BarriereDroite
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77341,7 +77341,7 @@ GameObject:
   - component: {fileID: 7922591964538194513}
   m_Layer: 0
   m_Name: OeilDroite
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88995,7 +88995,7 @@ GameObject:
   - component: {fileID: 2618048899885467395}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89171,7 +89171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cible: {fileID: 0}
   explosion: {fileID: 8300000, guid: c393b0a346f347fec89095653fbe2a56, type: 3}
-  Touche:
+  Toucher:
     m_PersistentCalls:
       m_Calls: []
 --- !u!82 &413050977149966430
@@ -89320,7 +89320,7 @@ GameObject:
   - component: {fileID: 8201601976312903242}
   m_Layer: 0
   m_Name: BarriereDevant
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

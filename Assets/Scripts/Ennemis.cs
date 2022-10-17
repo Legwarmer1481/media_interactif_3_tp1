@@ -13,6 +13,7 @@ public class Ennemis : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] AudioClip explosion;
+    [SerializeField] AudioSource gestionSon;
 
     // Composants
     private NavMeshAgent agent;
@@ -28,7 +29,10 @@ public class Ennemis : MonoBehaviour
     }
 
     void Update(){
-        agent.SetDestination(cible.transform.position);
+
+        if(cible != null){
+            agent.SetDestination(cible.transform.position);
+        }
     }
 
     void OnCollisionEnter(Collision other){
@@ -36,17 +40,24 @@ public class Ennemis : MonoBehaviour
         if(other.transform.tag == "Player"){
 
             audioSource.Stop();
-            audioSource.PlayOneShot(explosion, 1.0f);
+            gestionSon.PlayOneShot(explosion, 1.0f);
 
             Toucher.Invoke();
 
-            Invoke("AutoDetruire", explosion.length);
+            Destroy(gameObject);
         }
 
-    }
+        if(other.transform.tag == "Allie"){
 
-    void AutoDetruire(){
+            cible = null;
+            agent.ResetPath();
 
+            audioSource.Stop();
+            gestionSon.PlayOneShot(explosion, 1.0f);
+
+            Destroy(other.gameObject);
             Destroy(gameObject);
+        }
+
     }
 }
