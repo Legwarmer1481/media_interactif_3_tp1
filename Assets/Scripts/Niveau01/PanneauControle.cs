@@ -24,12 +24,6 @@ public class PanneauControle : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void Agir(){
 
         Debug.Log(joueur_mouvement.action);

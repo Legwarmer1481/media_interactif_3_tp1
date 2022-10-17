@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Audio;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class Ennemis : MonoBehaviour
@@ -13,25 +12,42 @@ public class Ennemis : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] AudioClip explosion;
-    [SerializeField] AudioSource gestionSon;
+
+    [SerializeField] Niveau01 contenu;
 
     // Composants
     private NavMeshAgent agent;
     private AudioSource audioSource;
 
-    // Evenements
-    public UnityEvent Toucher;
+    // Contenu de Niveau 01
+    [SerializeField] GameObject joueur;
+    [SerializeField] PlayerInput joueur_input;
+    [SerializeField] JoueurMouvement joueur_mouvement;
+    [SerializeField] AudioSource gestionBruit;
+    [SerializeField] GameObject defaite;
 
     void Start(){
 
         agent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
+
+        if(contenu == null){
+            contenu = GameObject.Find("GestionNiveau").GetComponent<Niveau01>();
+            joueur = contenu.joueur;
+            joueur_input = contenu.joueur_input;
+            joueur_mouvement = contenu.joueur_mouvement;
+            gestionBruit = contenu.gestionBruit;
+            defaite = contenu.defaite;
+
+            cible = joueur;
+        }
     }
 
     void Update(){
 
         if(cible != null){
             agent.SetDestination(cible.transform.position);
+            agent.speed = 6;
         }
     }
 
@@ -40,9 +56,12 @@ public class Ennemis : MonoBehaviour
         if(other.transform.tag == "Player"){
 
             audioSource.Stop();
-            gestionSon.PlayOneShot(explosion, 1.0f);
+            gestionBruit.PlayOneShot(explosion, 1.0f);
 
-            Toucher.Invoke();
+            joueur_mouvement.SetCursorState(false);
+            joueur_input.DeactivateInput();
+            defaite.SetActive(true);
+            joueur.SetActive(false);
 
             Destroy(gameObject);
         }
@@ -53,7 +72,7 @@ public class Ennemis : MonoBehaviour
             agent.ResetPath();
 
             audioSource.Stop();
-            gestionSon.PlayOneShot(explosion, 1.0f);
+            gestionBruit.PlayOneShot(explosion, 1.0f);
 
             Destroy(other.gameObject);
             Destroy(gameObject);
