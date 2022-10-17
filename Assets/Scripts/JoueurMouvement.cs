@@ -11,6 +11,7 @@ public class JoueurMouvement : MonoBehaviour
     public Vector2 regarder;
     public bool sauter;
     public bool courir;
+    public bool action;
 
     [Header("Mouse Cursor Settings")]
 	public bool cursorLocked = true;
@@ -35,7 +36,10 @@ public class JoueurMouvement : MonoBehaviour
 
     public void OnSprint(InputValue value){
         Courir(value.isPressed);
-        Debug.Log(value);
+    }
+
+    public void OnAction(InputValue value){
+        Action(value.isPressed);
     }
 
     /* ================================================
@@ -57,6 +61,10 @@ public class JoueurMouvement : MonoBehaviour
 
     public void Courir(bool etat){
         courir = etat;
+    }
+
+    public void Action(bool etat){
+        action = etat;
     }
 
     /* ================================================

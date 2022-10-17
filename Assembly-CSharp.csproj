@@ -80,6 +80,9 @@
      <Compile Include="Assets/Scripts/Allies.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" />
      <Compile Include="Assets/Scripts/Niveau01/ZoneEntree.cs" />
+     <Compile Include="Assets/Scripts/Niveau01/ZoneChambreFort.cs" />
+     <Compile Include="Assets/Scripts/Niveau01/ObjetInteractif.cs" />
+     <Compile Include="Assets/Scripts/Niveau01/Porte_ChambreFort.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

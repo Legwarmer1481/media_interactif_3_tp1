@@ -9,8 +9,6 @@ public class AlliesDetecteur : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
 
-        Debug.Log(other.transform.tag);
-
         if(allie.cible != null && allie.cible.transform.tag == "Player"){
 
             if(other.transform.tag == "Ennemi"){

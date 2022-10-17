@@ -20,6 +20,9 @@ public class ControlleurPremierePersonne : MonoBehaviour
     [SerializeField] float sautTimeOut = 0.1f;
     [SerializeField] float chuteTimeOut = 0.1f;
 
+    [Space(10)]
+    [SerializeField] float actionTimeOut = 0.1f;
+
     [Header("Joueur au sol")]
     [SerializeField] bool auSol = true;
     [SerializeField] float solOffset = 0.42f;
@@ -43,6 +46,7 @@ public class ControlleurPremierePersonne : MonoBehaviour
     // Minuteries
     private float minuterieSaut;
     private float minuterieChute;
+    private float minuterieAction;
 
     // Composants
     private PlayerInput joueur_input;
@@ -70,6 +74,7 @@ public class ControlleurPremierePersonne : MonoBehaviour
         SautEtGravite();
         VerificationSol();
         Bouge();
+        Agir();
     }
 
     void LateUpdate(){
@@ -151,6 +156,26 @@ public class ControlleurPremierePersonne : MonoBehaviour
             velociteVerticale += gravite * Time.deltaTime;
         }
 
+    }
+
+    void Agir(){
+        
+        if(joueur_mouvement.action == true){
+
+            Debug.Log(minuterieAction);
+
+            if(minuterieAction > 0.0f){
+                minuterieAction -= Time.deltaTime;
+            }else{
+                joueur_mouvement.action = false;
+            }
+
+
+        }else{
+
+            minuterieAction = actionTimeOut;
+        
+        }
     }
 
     void RotationCamera(){

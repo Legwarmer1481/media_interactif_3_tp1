@@ -11,6 +11,10 @@ public class Niveau01 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        for(int i = 0; i < np.objects.Length; i++){
+            np.objects[i] = false;
+        }
         
     }
 

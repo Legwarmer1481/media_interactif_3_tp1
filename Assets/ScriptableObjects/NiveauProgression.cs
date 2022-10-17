@@ -9,5 +9,5 @@ public class NiveauProgression : ScriptableObject
     public int nbEnnemi;
     public int nbEnnemiMax;
 
-    public bool[] objectsInteractifs;
+    public bool[] objects;
 }

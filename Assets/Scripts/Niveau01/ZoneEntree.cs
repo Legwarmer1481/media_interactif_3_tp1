@@ -7,26 +7,20 @@ public class ZoneEntree : MonoBehaviour
 {
     
     [SerializeField] Animator porte_anim;
+    [SerializeField] private GameObject ennemis;
 
-    public UnityEvent enSecurite;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public UnityEvent dialogue;
 
     void OnTriggerEnter(Collider other){
 
-        porte_anim.SetBool("character_nearby", false);
+        if(other.transform.tag == "Player"){
+            porte_anim.SetBool("character_nearby", false);
 
-        enSecurite.Invoke();
+            dialogue.Invoke();
+
+            Destroy(ennemis);
+            Destroy(gameObject);
+        }
 
     }
 }
