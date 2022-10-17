@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2b82da596e8987eafeffb94c7ee3eb, type: 3}
   m_Name: Niveau01
   m_EditorClassIdentifier: 
-  nbEnnemi: 4
-  nbEnnemiMax: 4
+  ennemiTotal: 4
+  ennemiMax: 4
   objects: 0000

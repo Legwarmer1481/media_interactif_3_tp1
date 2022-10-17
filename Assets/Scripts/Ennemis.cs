@@ -77,6 +77,5 @@ public class Ennemis : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-
     }
 }

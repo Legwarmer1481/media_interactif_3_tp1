@@ -89171,9 +89171,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cible: {fileID: 0}
   explosion: {fileID: 8300000, guid: c393b0a346f347fec89095653fbe2a56, type: 3}
-  Toucher:
-    m_PersistentCalls:
-      m_Calls: []
+  contenu: {fileID: 0}
+  joueur: {fileID: 0}
+  joueur_input: {fileID: 0}
+  joueur_mouvement: {fileID: 0}
+  gestionBruit: {fileID: 0}
+  defaite: {fileID: 0}
 --- !u!82 &413050977149966430
 AudioSource:
   m_ObjectHideFlags: 0

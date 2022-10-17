@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
 
 public class Allies : MonoBehaviour
 {
 
     // Composants
     public GameObject cible;
-    public float distance = 5f;
-    [SerializeField] private float distanceDefaut = 5f;
-    [SerializeField] private SphereCollider detecteur;
+    public float distance = 5;
     private NavMeshAgent agent;
 
     // Start is called before the first frame update
@@ -29,7 +26,7 @@ public class Allies : MonoBehaviour
         if(cible != null){
 
             agent.SetDestination(cible.transform.position);
-            agent.stoppingDistance= distance;
+            agent.stoppingDistance = distance;
 
         }
         
@@ -40,7 +37,18 @@ public class Allies : MonoBehaviour
         if(other.transform.tag == "Player"){
 
             cible = other.gameObject;
-            distance = distanceDefaut;
+            distance = 5f;
+
+        }
+
+    }
+
+    void OnTriggerEnter(Collider other){
+
+        if(other.transform.tag == "Ennemi"){
+
+            cible = other.gameObject;
+            distance = 0f;
 
         }
 
