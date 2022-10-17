@@ -16,12 +16,6 @@ public class Porte_ChambreFort : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Detruire(){
         Destroy(gameObject);
     }

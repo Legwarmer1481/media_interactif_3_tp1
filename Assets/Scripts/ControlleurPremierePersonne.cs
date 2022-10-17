@@ -162,8 +162,6 @@ public class ControlleurPremierePersonne : MonoBehaviour
         
         if(joueur_mouvement.action == true){
 
-            Debug.Log(minuterieAction);
-
             if(minuterieAction > 0.0f){
                 minuterieAction -= Time.deltaTime;
             }else{

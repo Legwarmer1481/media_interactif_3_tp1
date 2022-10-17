@@ -12,19 +12,17 @@ public class ObjetInteractif : MonoBehaviour
     public UnityEvent aProximite;
     public UnityEvent tropLoin;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        Action();
-        
-    }
-
     void OnTriggerEnter(Collider other){
         
         if(other.transform.tag == "Player"){
             aProximite.Invoke();
         }
+    }
+
+    void OnTriggerStay(Collider other){
+
+        Action();
+    
     }
 
     void OnTriggerExit(Collider other){
