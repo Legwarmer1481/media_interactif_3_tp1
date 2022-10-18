@@ -21,6 +21,7 @@ public class Niveau01 : MonoBehaviour
 
     void Start()
     {
+        joueur_mouvement.SetCursorState(joueur_mouvement.cursorLocked);
 
         for(int i = 0; i < np.objects.Length; i++){
             np.objects[i] = false;
