@@ -7,6 +7,8 @@ public class Droid : MonoBehaviour
     private int nbDestinations;
     private int destiIndex = 0;
     private Vector3 direction = Vector3.zero;
+    private Transform parent;
+    private float minuterie;
     [SerializeField] Vector3[] destinations;
     [SerializeField] float ralentissement = 1f;
     [SerializeField] float interval = 5f;
@@ -16,6 +18,8 @@ public class Droid : MonoBehaviour
     {
 
         nbDestinations = destinations.Length;
+        parent = transform.parent;
+        minuterie = ralentissement;
         Invoke("ChangerDirection", interval);
         
     }
@@ -28,9 +32,11 @@ public class Droid : MonoBehaviour
 
     void Bouge(){
 
-        Debug.Log("ok");
+        Vector3 destination = parent.transform.TransformPoint(destinations[destiIndex]);
 
-        transform.position = Vector3.SmoothDamp(transform.position, destinations[destiIndex], ref direction, ralentissement);
+        transform.position = Vector3.SmoothDamp(transform.position, destination, ref direction, minuterie);
+
+        minuterie -= Time.deltaTime;
 
     }
 
@@ -41,6 +47,8 @@ public class Droid : MonoBehaviour
         }else{
             destiIndex++;
         }
+
+        minuterie = ralentissement;
 
         Invoke("ChangerDirection", interval);
     }
