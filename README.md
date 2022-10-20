@@ -14,3 +14,4 @@ du jeu. Vous pouvez voir mon travail dans ce répertoire ou simplement télécha
 * Optimiser les textures et les matériaux pour réduire le chargement
 * Ajouter un écran de chargement pour laisser la scène de se complètement charger
 * Remplacer le textMeshPro par une texture au niveau 2
+* Ajouter une musique à l'écran-titre (L'accueil)
