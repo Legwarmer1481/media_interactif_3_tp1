@@ -26,8 +26,6 @@ public class PanneauControle : MonoBehaviour
 
     void Agir(){
 
-        Debug.Log(joueur_mouvement.action);
-
         if(joueur_mouvement.action == true){
             
             if(progres.objects[0] == true){
