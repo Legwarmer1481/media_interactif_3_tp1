@@ -16,10 +16,14 @@ public class Porte_ChambreFort : MonoBehaviour
         
     }
 
+    // Cette méthode est appellé par l'animation pour faire disparaître la porte
+    // quand l'animation est fini
     public void Detruire(){
         Destroy(gameObject);
     }
 
+    // Active l'animation qui fait ouvrir la porte quand le personnage se trouve à proximité
+    // de la porte avec la carte d'accès
     void OnTriggerEnter(Collider other){
 
         if(other.transform.tag == "Player"){

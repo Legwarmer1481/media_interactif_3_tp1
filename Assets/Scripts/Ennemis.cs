@@ -31,6 +31,9 @@ public class Ennemis : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
 
+        // L'objet GestionNiveau fourni les informations nécessaire pour pouvoir
+        // fonctionner entièrement dans le jeu. Sa destination NavMesh, l'écran
+        // Game Over, l'explosion, ect.
         if(contenu == null){
             contenu = GameObject.Find("GestionNiveau").GetComponent<Niveau01>();
             joueur = contenu.joueur;
@@ -51,6 +54,8 @@ public class Ennemis : MonoBehaviour
         }
     }
 
+    // Si tu te fais toucher, tu es un(e) perdant(e).
+    // Mais, si c'est ton robot sauveur, le jeu devient légèrement plus facile.
     void OnCollisionEnter(Collision other){
 
         if(other.transform.tag == "Player"){

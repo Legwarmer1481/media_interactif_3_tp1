@@ -6,8 +6,12 @@ using UnityEngine.InputSystem;
 public class Niveau01 : MonoBehaviour
 {
 
+    // Ce script est responable à maintenir les informations nécessaire pour
+    // permettre aux robots méchants de fonctionner correctement.
+    // Ce script fait apparaître les ennemis à des endroit aléatoires du monde.
+
     [SerializeField] NiveauProgression np;
-    [SerializeField] GameObject[] spawns;
+    private GameObject[] spawns;
     [SerializeField] GameObject Ennemi;
     [SerializeField] GameObject Ennemis;
 

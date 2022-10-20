@@ -11,7 +11,6 @@ public class Allies : MonoBehaviour
     public float distance = 5;
     private NavMeshAgent agent;
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -19,9 +18,14 @@ public class Allies : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+
+        // À chaque frame, le robot qui vous protège cherche sa cible
+        // gérer par le NavMesh. Un moment donné, la variable cible
+        // ne sera plus null, mais contiendra un gameObjet. Quand
+        // ça arrivera, il va la suivre ou foncer dedans selon la valeur
+        // attribuée à stoppingDistance.
 
         if(cible != null){
 
@@ -32,6 +36,7 @@ public class Allies : MonoBehaviour
         
     }
 
+    // Le joueur fonce dessus le robot gentil. Il sera suivi par ce dernier.
     void OnCollisionEnter(Collision other){
 
         if(other.transform.tag == "Player"){
@@ -43,9 +48,11 @@ public class Allies : MonoBehaviour
 
     }
 
+    // Quand l'ennemi se trouve dans le périmètre assigné. Il se sacrifira pour te protéger.
+    // Comment oses-tu lui faire ça !!
     void OnTriggerEnter(Collider other){
 
-        if(other.transform.tag == "Ennemi"){
+        if(other.transform.tag == "Ennemi" && cible.transform.tag == "Player"){
 
             cible = other.gameObject;
             distance = 0f;

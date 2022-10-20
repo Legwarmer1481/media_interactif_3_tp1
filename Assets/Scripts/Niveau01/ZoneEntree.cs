@@ -11,6 +11,9 @@ public class ZoneEntree : MonoBehaviour
 
     public UnityEvent dialogue;
 
+    // Même chose que ZoneChambreFort.cs, mais en plus il détruit les ennemis
+    // restant de la scène pour ne plus les entendre crier.
+
     void OnTriggerEnter(Collider other){
 
         if(other.transform.tag == "Player"){

@@ -77,6 +77,7 @@ public class ControlleurPremierePersonne : MonoBehaviour
         Agir();
     }
 
+    // Appelle les fonctions en dernier
     void LateUpdate(){
         
         RotationCamera();

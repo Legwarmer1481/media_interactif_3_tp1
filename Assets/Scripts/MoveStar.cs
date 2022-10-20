@@ -5,6 +5,9 @@ using UnityEngine;
 public class MoveStar : MonoBehaviour
 {
 
+    // Les étoiles filantes vont de l'avant, sans s'arrêter, mais ils reviennent après avoir
+    // atteint le bout du monde !
+
     [SerializeField] float vitesse = 10;
 
     // Update is called once per frame

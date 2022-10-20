@@ -6,6 +6,12 @@ using UnityEngine.Events;
 public class PanneauControle : MonoBehaviour
 {
 
+    // On viens chercher le minimum qu'on a besoin.
+    // Le personnage, ses certains composants, le projecteur près du panneau de contrôle,
+    // le scriptableobject pour traquer la progression, le script pour aller à la scène
+    // suivante. Le composant Animator de cette objet pour démarrer l'animation. Et 
+    // les unityEvents pour gratifier ma paresse.
+
     [SerializeField] GameObject joueur;
     [SerializeField] GameObject projecteur;
     [SerializeField] JoueurMouvement joueur_mouvement;
@@ -16,7 +22,6 @@ public class PanneauControle : MonoBehaviour
     public UnityEvent aProximite;
     public UnityEvent tropLoin;
 
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -24,6 +29,10 @@ public class PanneauControle : MonoBehaviour
 
     }
 
+    // Le même concepte que la fonction Action() dans les différents scripts.
+    // La différence avec les objets interactifs est qu'il active l'animation
+    // du levier, force le personnage à regarder le projecteur avant de se téléporter
+    // au niveau suivant.
     void Agir(){
 
         if(joueur_mouvement.action == true){
@@ -63,6 +72,7 @@ public class PanneauControle : MonoBehaviour
         }
     }
 
+    // La méthode appeller par le UnityEvent qui force le joueur à regarder le projecteur
     public void RegarderProjecteur(){
 
         joueur.transform.LookAt(projecteur.transform);

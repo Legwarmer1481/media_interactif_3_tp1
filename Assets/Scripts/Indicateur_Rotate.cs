@@ -5,18 +5,9 @@ using UnityEngine;
 public class Indicateur_Rotate : MonoBehaviour
 {
 
-    private Vector3 orientationDepart;
+    // L'objet tourne sur elle-même
     [SerializeField] float vitesse = 5;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        orientationDepart = transform.localEulerAngles;
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Tourne();
